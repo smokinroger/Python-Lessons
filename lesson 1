@@ -1,0 +1,76 @@
+# Дз изи
+import math
+
+print('Урок первый')
+task = 1
+run = 'Y'
+
+lastname = input('Введите фамилию: ')
+firstname = input('Введите имя: ')
+
+print('Автор %s %s' % (lastname, firstname))
+
+while run == 'N':
+
+    print("Задачи уровень EASY")
+
+    in_number = str(input('Введите любое число '))
+
+    # Задача 2
+
+    if str.isdigit(in_number):
+        in_number = int(in_number)
+        print('Введенное число %d увеличено на 2. Результат: %d' % (in_number, in_number + 2))
+    else:
+        print('Введено некорректное число')
+    # Задача 3
+    age = input('Введите ваш возраст: ')
+    if str.isdigit(age) and int(age) < 18:
+        print('Вы слишком молоды ещё, завершение работы...')
+        run = 'N'
+    else:
+        print('Возраст впорядке')
+        run = input('Повторить? (Y/N) ')
+
+else:
+    print('Выполнение задач завершено')
+
+run2 = 'Y'
+while run2 == 'Y':
+
+    print("Задачи уровень Normal")
+    proceed = True
+
+    while proceed:
+
+        in_number = input('Введите число: ')
+
+        if str.isdigit(in_number) and 0 < int(in_number) < 10:
+            print('Квадрат введенного числа равен: %d' % (math.pow(int(in_number), 2)))
+            proceed = False
+        else:
+            print('Диапазон допустимимых чисел от 0 до 10')
+
+    val1 = input('Введите 1ое число: ')
+    val2 = input('Введите 2ое число: ')
+
+    if str.isdigit(val1) and str.isdigit(val2):
+
+        val1 = int(val1)
+        val2 = int(val2)
+
+        val1 += val2
+        val2 = val1-val2
+        val1 -= val2
+
+        print('результат магии перестановки')
+        print('1ое число теперь: %d' % val1)
+        print('2ое число теперь: %d' % val2)
+
+    else:
+        pass
+
+    run2 = input('Повторить выполнение ? (Y/N) ')
+
+else:
+    print('Выполнение Normal задач завершено')
