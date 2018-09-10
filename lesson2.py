@@ -135,3 +135,4 @@ for x in fst_list:
     if fst_list.count(x) == 1:
         snd_lst.append(x)
 print(f'second list \n {snd_lst}')
+ 
