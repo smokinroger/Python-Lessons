@@ -30,7 +30,16 @@ print(result)
 
 ##Task 1
 
+import re
+
 name = input('Введите ваше Имя: ')
 surname = input('Введите вашу Фамилию: ')
+email = input('Введите ваш имейл : ')
 
+name_pattern = r'^[А-ЯA-Z]'
+email_pattern = r'[A-Za-z0-9_]+@[A-Za-z0-9]+.(com|ru|org)*$'
+
+print('Имя указано верно' if re.match(name_pattern, name) else 'Имя указано не верно')
+print('Фамилия указана верно' if re.match(name_pattern, surname) else 'Фамилия указана не верно')
+print(re.search(email_pattern, email) is None)
 
